@@ -11,5 +11,11 @@ export default [
         "notes": "really heavy :D"
       }
     ]
+  },
+  {
+    "username": "prova",
+    "date": "21.04.2021",
+    "notes": "",
+    "exercises": []
   }
 ]

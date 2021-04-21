@@ -1,8 +1,8 @@
 {
   "name": "shell",
   "version": "1.0.0",
-  "description": "",
-  "main": "lib",
+  "description": "ts, training, shelljs, inquirer",
+  "main": "src",
   "scripts": {
     "start": "ts-node src/index.ts",
     "test": "jest",

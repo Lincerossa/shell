@@ -30,13 +30,13 @@ async function init(){
   }
 
   if(commitData.commit) {
-    if (shell.exec('git commit -am "Auto-commit"').code !== 0) {
+    if (shell.exec('git commit -am "Auto-commit"').code !== 0 || shell.exec("npm run test")) {
       shell.echo('Error: Git commit failed');
       shell.exit(1);
     }
+
     shell.exec("git push")
   }
-
 }
 
 init()
