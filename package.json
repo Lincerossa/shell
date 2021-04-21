@@ -4,9 +4,11 @@
   "description": "",
   "main": "lib",
   "scripts": {
-    "start": "nodemon --watch src --ext ts,json --exec ts-node src/index.ts",
+    "start": "ts-node src/index.ts",
+    "start:watch": "nodemon --watch src --ext ts,json --exec ts-node src/index.ts",
     "build": "tsc --build tsconfig.json",
-    "test": "jest"
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "author": {
     "name": "Luatti Marcello",
@@ -15,11 +17,16 @@
   "license": "ISC",
   "dependencies": {
     "chalk": "^4.1.0",
+    "inquirer": "^8.0.0",
+    "inquirer-recursive": "0.0.7",
+    "prompt": "^1.1.0",
     "shelljs": "^0.8.4"
   },
   "devDependencies": {
     "@types/chalk": "^2.2.0",
+    "@types/inquirer": "^7.3.1",
     "@types/jest": "^26.0.22",
+    "@types/prompt": "^1.1.0",
     "@types/shelljs": "^0.8.8",
     "jest": "^26.6.3",
     "nodemon": "^2.0.7",

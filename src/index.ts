@@ -1,36 +1,74 @@
 import shell from 'shelljs'
 import chalk from 'chalk'
+import inquirer from 'inquirer'
+inquirer.registerPrompt('recursive', require('inquirer-recursive'));
 
-if (shell.which('git')) {
-  console.log(chalk.green('Welcome to your git'));
+
+console.log(chalk.green("Hello guy 🦄, The program has just started"))
+
+async function init(){
+  const data = await inquirer.prompt([
+    {
+      type: "input",
+      name: "username",
+      validate: function (value) {
+        if ((/.+/).test(value)) { return true; }
+      return 'name is required';
+      }
+    },
+    {
+      type: "input",
+      name: "date",
+      validate: function (value) {
+        if ((/.+/).test(value)) { return true; }
+        return 'name is required';
+      }
+    },
+    {
+      type: "input",
+      name: "notes",
+    },
+    {
+      type: 'recursive',
+      message: 'Add a new exercise?',
+      name: 'exercises',
+      prompts: [
+        {
+          type: 'input',
+          name: 'name',
+          validate: function (value:string) {
+            if ((/.+/).test(value)) { return true; }
+            return 'name is required';
+          }
+        },
+        {
+          type: 'input',
+          name: 'reps',
+          validate: function (value: string) {
+            var digitsOnly = /\d+/;
+            if (digitsOnly.test(value)) { return true; }
+            return 'Invalid! Must be a number';
+          }
+        },
+        {
+          type: 'input',
+          name: 'kg',
+          validate: function (value: string) {
+            var digitsOnly = /\d+/;
+            if (digitsOnly.test(value)) { return true; }
+            return 'Invalid! Must be a number';
+          }
+        },
+        {
+          type: 'input',
+          name: 'notes',
+          message: 'Do you have notes',
+        },
+      ]
+    },
+  ])
+
+  console.log("asd", data)
 }
- 
 
-if (!shell.which('git')) {
-  shell.echo('Sorry, this script requires git');
-  shell.exit(1);
-}
- 
-// // Copy files to release dir
-// shell.rm('-rf', 'out/Release');
-// shell.cp('-R', 'src/', 'out/Release');
- 
-// // Replace macros in each .js file
-// shell.cd('lib');
-// shell.ls('*.js').forEach(function (file) {
-//   shell.sed('-i', 'BUILD_VERSION', 'v0.1.2', file);
-//   shell.sed('-i', /^.*REMOVE_THIS_LINE.*$/, '', file);
-//   shell.sed('-i', /.*REPLACE_LINE_WITH_MACRO.*\n/, shell.cat('macro.js'), file);
-// });
-// shell.cd('..');
- 
-// // Run external tool synchronously
-// if (shell.exec('git commit -am "Auto-commit"').code !== 0) {
-//   shell.echo('Error: Git commit failed');
-//   shell.exit(1);
-// }
-
-shell.cp('-R', 'src/', 'out');
-
-shell.echo('test');
-
+init()
