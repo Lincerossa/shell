@@ -4,9 +4,8 @@
   "description": "ts, training, shelljs, inquirer",
   "main": "src",
   "scripts": {
-    "start:shell": "ts-node shell/index.ts",
-    "prestart:shellappa": "cp ./shell/data.ts ./shellappa/src",
-    "start:shellappa": "cd shellappa && npm start",
+    "record-data": "ts-node shell/index.ts",
+    "inject-data": "cp ./shell/data.ts ./shellappa/src",
     "test": "jest",
     "test:watch": "jest --watch"
   },
