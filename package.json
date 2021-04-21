@@ -4,7 +4,7 @@
   "description": "ts, training, shelljs, inquirer",
   "main": "src",
   "scripts": {
-    "start": "ts-node src/index.ts",
+    "start:shell": "ts-node shell/index.ts",
     "test": "jest",
     "test:watch": "jest --watch"
   },

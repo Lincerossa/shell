@@ -1,6 +1,6 @@
 module.exports = {
   "roots": [
-    "<rootDir>/src"
+    "<rootDir>/shell"
   ],
   "testMatch": ["**/?(*.)+(test).+(ts|js)"],
   "transform": {
