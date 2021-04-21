@@ -1,13 +1,15 @@
-import shell from 'shelljs'
+
+import fs from 'fs';
 import chalk from 'chalk'
 import inquirer from 'inquirer'
-inquirer.registerPrompt('recursive', require('inquirer-recursive'));
+import previousTrainingSessions from './data'
 
+inquirer.registerPrompt('recursive', require('inquirer-recursive'));
 
 console.log(chalk.green("Hello guy 🦄, The program has just started"))
 
 async function init(){
-  const data = await inquirer.prompt([
+  const trainingSession = await inquirer.prompt([
     {
       type: "input",
       name: "username",
@@ -68,7 +70,11 @@ async function init(){
     },
   ])
 
-  console.log("asd", data)
+  if(trainingSession) {
+
+    const result = JSON.stringify([...previousTrainingSessions, trainingSession ])
+    fs.writeFileSync("./src/data.ts", `export default ${result}`) 
+  }
 }
 
 init()
