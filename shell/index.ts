@@ -5,7 +5,7 @@ import shell from 'shelljs'
 import inquirer from 'inquirer'
 import trainingQuestions from './utils/trainingQuestions'
 import commitQuestions from './utils/commitQustions'
-import data from '../data'
+import data from './data'
 import TrainingData from './types/TrainingData'
 import CommitData from './types/CommitData'
 
