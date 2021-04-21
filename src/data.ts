@@ -17,5 +17,11 @@ export default [
     "date": "21.04.2021",
     "notes": "",
     "exercises": []
+  },
+  {
+    "username": "a",
+    "date": "21.04.2021",
+    "notes": "a",
+    "exercises": []
   }
 ]
