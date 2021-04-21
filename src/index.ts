@@ -29,6 +29,14 @@ async function init(){
     fs.writeFileSync("./src/data.ts", `export default ${JSON.stringify(result, null, 2)}`) 
   }
 
+  if(commitData.commit) {
+    if (shell.exec('git commit -am "Auto-commit"').code !== 0) {
+      shell.echo('Error: Git commit failed');
+      shell.exit(1);
+    }
+    shell.exec("git push")
+  }
+
 }
 
 init()
