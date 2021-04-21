@@ -1,6 +1,6 @@
-import Qustion from '../types/Question'
+import TrainingQuestion from '../types/TrainingQuestion'
 
-const questions: Qustion[] = [
+const trainingQuestions: TrainingQuestion[] = [
   {
     type: "input",
     name: "username",
@@ -35,7 +35,7 @@ const questions: Qustion[] = [
         }
       },
       {
-        type: 'input',
+        type: 'number',
         name: 'reps',
         validate: function (value: string) {
           var digitsOnly = /\d+/;
@@ -44,7 +44,7 @@ const questions: Qustion[] = [
         }
       },
       {
-        type: 'input',
+        type: 'number',
         name: 'kg',
         validate: function (value: string) {
           var digitsOnly = /\d+/;
@@ -61,4 +61,4 @@ const questions: Qustion[] = [
   },
 ]
 
-export default questions
+export default trainingQuestions

@@ -1,11 +1,11 @@
 
 
-type Question = {
+type TrainingQuestion = {
   type: string,
   name: string,
   message?: string
   validate?: (a: string) => string | boolean
-  prompts?: Question[]
+  prompts?: TrainingQuestion[]
 }
 
-export default Question
+export default TrainingQuestion

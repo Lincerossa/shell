@@ -1,7 +1,7 @@
 type Exercise = {
   name: string,
-  reps: string,
-  kg: string,
+  reps: number,
+  kg: number,
   notes?: string
 }
 
