@@ -5,7 +5,6 @@
   "main": "src",
   "scripts": {
     "record-data": "ts-node shell/index.ts",
-    "inject-data": "cp ./shell/data.ts ./shellappa/src",
     "test": "jest",
     "test:watch": "jest --watch"
   },

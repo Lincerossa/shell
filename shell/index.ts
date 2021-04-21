@@ -26,7 +26,8 @@ async function init(){
   if(trainingData) {
     const result: TrainingData[] = [...data, trainingData ]
     console.log(chalk.green(`The new data is now available with ${result.length} results`))
-    fs.writeFileSync("./data.ts", `export default ${JSON.stringify(result, null, 2)}`) 
+    fs.writeFileSync("./shell/data.ts", `export default ${JSON.stringify(result, null, 2)}`) 
+    fs.writeFileSync("./shellappa/src/data.ts", `export default ${JSON.stringify(result, null, 2)}`) 
   }
 
   if(commitData.commit) {
