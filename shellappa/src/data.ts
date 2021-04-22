@@ -41,5 +41,18 @@ export default [
     "date": "21.04.2021",
     "notes": "prova",
     "exercises": []
+  },
+  {
+    "username": "marci",
+    "date": "22.04.2021",
+    "notes": "prova con gus",
+    "exercises": [
+      {
+        "name": "prova esercizio",
+        "reps": 10,
+        "kg": 100,
+        "notes": "nessuna nota"
+      }
+    ]
   }
 ]
