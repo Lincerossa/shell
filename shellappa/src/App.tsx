@@ -18,7 +18,7 @@ function App() {
         onChange={(e: any) => console.log(e)}
         tileContent={TitleContent}
       />
-      <H2></H2>
+      <H2><small>(see in console for now)</small></H2>
     </Wrapper>
   );
 }
